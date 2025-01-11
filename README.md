@@ -16,4 +16,3 @@ This project tries to make a humanoid robot walk in a physics-based simulation.
 Curriculum
 1. Standing
 2. Walking
-
