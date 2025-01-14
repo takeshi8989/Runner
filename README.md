@@ -5,6 +5,15 @@
 This project tries to make a humanoid robot walk in a physics-based simulation.
 
 
+## Process
+
+MacOS
+
+conda
+conda create -n env python=3.10
+pip install
+
+
 ## External Resources
 
 - Genesis
@@ -16,3 +25,4 @@ This project tries to make a humanoid robot walk in a physics-based simulation.
 Curriculum
 1. Standing
 2. Walking
+3. 

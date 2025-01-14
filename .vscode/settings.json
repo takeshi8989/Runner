@@ -1,0 +1,8 @@
+{
+  "autopep8.args": ["--max-line-length=120"],
+  "flake8.args": ["--ignore=E501"],
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8",
+    "editor.formatOnSave": true
+  }
+}

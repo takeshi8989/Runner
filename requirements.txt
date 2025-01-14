@@ -1,0 +1,102 @@
+absl-py==2.1.0
+annotated-types==0.7.0
+black==24.10.0
+Brotli @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_f7i0oxypt6/croot/brotli-split_1736182464088/work
+certifi @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_d8j59rqun5/croot/certifi_1734473289913/work/certifi
+charset-normalizer @ file:///croot/charset-normalizer_1721748349566/work
+click==8.1.8
+coacd==1.0.5
+colorama==0.4.6
+contourpy==1.3.1
+cycler==0.12.1
+Cython==3.0.11
+dataclasses-json==0.6.7
+decorator==5.1.1
+Deprecated==1.2.15
+dill==0.3.9
+etils==1.11.0
+filelock @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_d3quwmvouf/croot/filelock_1700591194006/work
+fonttools==4.55.3
+freetype-py==2.5.1
+fsspec==2024.12.0
+genesis-world==0.2.1
+glfw==2.8.0
+gmpy2 @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/croot-muov7gw1/gmpy2_1645462616268/work
+grpcio==1.69.0
+idna @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_a12xpo84t2/croot/idna_1714398852854/work
+imageio==2.36.1
+imageio-ffmpeg==0.5.1
+importlib_resources==6.5.2
+Jinja2 @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_b15nuwux5r/croot/jinja2_1730902833938/work
+kiwisolver==1.4.8
+lazy_loader==0.4
+libigl==2.5.1
+llvmlite==0.43.0
+lxml==5.3.0
+Markdown==3.7
+markdown-it-py==3.0.0
+MarkupSafe @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_86igzj24n7/croot/markupsafe_1736523007129/work
+marshmallow==3.25.0
+matplotlib==3.10.0
+mdurl==0.1.2
+moviepy==2.1.2
+mpmath @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_17iu6a8a3m/croot/mpmath_1690848269369/work
+mujoco==3.2.5
+mypy-extensions==1.0.0
+networkx @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_797xfkx_y7/croot/networkx_1717597499877/work
+numba==0.60.0
+numpy==1.26.4
+ompl @ file:///Users/takeshi/Desktop/humanoid_walk/ompl-1.6.0-cp310-cp310-macosx_13_0_arm64.whl#sha256=ebf2ce02bd854414f1e6318abd4e989e10f5378b3556705e5ab18d045c3d5d5b
+opencv-python==4.10.0.84
+OpenEXR==3.3.2
+packaging==24.2
+pathspec==0.12.1
+pillow==10.4.0
+platformdirs==4.3.6
+plotly==5.24.1
+pooch==1.8.2
+proglog==0.1.10
+protobuf==5.29.3
+psutil==6.1.1
+pycollada==0.8
+pydantic==2.7.1
+pydantic_core==2.18.2
+PyGEL3D==0.5.2
+pyglet==2.1.0
+pygltflib==1.16.0
+Pygments==2.19.1
+pymeshlab==2023.12.post2
+pyobjc-core==10.3.2
+pyobjc-framework-Cocoa==10.3.2
+PyOpenGL==3.1.7
+pyparsing==3.2.1
+PySocks @ file:///Users/ktietz/ci_310/pysocks_1643961536721/work
+python-dateutil==2.9.0.post0
+python-dotenv==1.0.1
+pyvista==0.44.2
+PyYAML @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_faoex52hrr/croot/pyyaml_1728657970485/work
+requests @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ee45nsd33z/croot/requests_1730999134038/work
+rich==13.9.4
+scikit-image==0.25.0
+scipy==1.15.1
+scooby==0.10.0
+screeninfo==0.8.1
+six==1.17.0
+sympy==1.13.1
+taichi==1.7.3
+tenacity==9.0.0
+tensorboard==2.18.0
+tensorboard-data-server==0.7.2
+tetgen==0.6.4
+tifffile==2025.1.10
+tomli==2.2.1
+torch==2.5.1
+torchvision==0.20.1
+tqdm==4.67.1
+typing-inspect==0.9.0
+typing_extensions @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_0b3jpv_f79/croot/typing_extensions_1734714864260/work
+urllib3 @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_06_m8gdsy6/croot/urllib3_1727769822458/work
+vtk==9.3.1
+Werkzeug==3.1.3
+wrapt==1.17.1
+zipp==3.21.0
