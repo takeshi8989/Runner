@@ -9,10 +9,11 @@ This project tries to make a humanoid robot walk in a physics-based simulation.
 
 MacOS
 
-conda create -n \<envname\> python=3.10
-
-conda install pip
-
+conda create -n runner python=3.10
+conda activate runner
+conda install -c conda-forge numpy
+conda install pytorch -c pytorch
+pip install genesis-world
 pip install -r requirements.txt
 
 python train.py
