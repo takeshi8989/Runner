@@ -44,12 +44,17 @@ class HumanoidWalkEnv:
         self.scene = gs.Scene(
             sim_options=gs.options.SimOptions(dt=self.dt, substeps=2),
             viewer_options=gs.options.ViewerOptions(
+                res=(1280, 960),
                 max_FPS=int(0.5 / self.dt),
-                camera_pos=(2.0, 0.0, 2.5),
-                camera_lookat=(0.0, 0.0, 0.5),
-                camera_fov=40,
+                camera_pos=(-3.0, 0.0, 2.0),
+                camera_lookat=(2.0, -1.5, 1.0),
+                camera_fov=60,
             ),
-            vis_options=gs.options.VisOptions(n_rendered_envs=1),
+            vis_options=gs.options.VisOptions(
+                show_world_frame=False,
+                world_frame_size=1.0,
+                n_rendered_envs=1
+            ),
             rigid_options=gs.options.RigidOptions(
                 dt=self.dt,
                 constraint_solver=gs.constraint_solver.Newton,

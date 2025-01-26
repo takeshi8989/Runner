@@ -107,7 +107,7 @@ def get_cfgs():
         # termination
         "termination_base_height": 0.4,
         # base pose
-        "base_init_pos": [0.0, 0.0, 0.8],
+        "base_init_pos": [0.0, 0.0, 0.75],
         "base_init_quat": [1.0, 0.0, 0.0, 0.0],
         "episode_length_s": 20.0,
         "resampling_time_s": 4.0,
@@ -153,7 +153,7 @@ def get_cfgs():
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("-e", "--exp_name", type=str, default="humanoid_walking")
+    parser.add_argument("-e", "--exp_name", type=str, default="runner")
     parser.add_argument("-B", "--num_envs", type=int, default=2048)
     parser.add_argument("--max_iterations", type=int, default=1000)
     args = parser.parse_args()

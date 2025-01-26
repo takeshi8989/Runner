@@ -10,7 +10,7 @@ import genesis as gs
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("-e", "--exp_name", type=str, default="humanoid_walking")
+    parser.add_argument("-e", "--exp_name", type=str, default="runner")
     parser.add_argument("--ckpt", type=int, default=100)
     parser.add_argument("-v", "--vis", action="store_true", default=False)
     args = parser.parse_args()
@@ -45,5 +45,5 @@ if __name__ == "__main__":
 
 """
 # evaluation
-python eval.py -e humanoid_walking -v --ckpt 0
+python eval.py -e runner -v --ckpt 0
 """
