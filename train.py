@@ -3,7 +3,7 @@ import os
 import pickle
 import shutil
 
-from env import HumanoidWalkEnv
+from env import RunnerEnv
 from rsl_rl.runners import OnPolicyRunner
 
 import genesis as gs
@@ -139,7 +139,7 @@ def get_cfgs():
             "torso_upright": 0.1,
             "crotch_control": 8.0,
         },
-        "base_height_target": 0.8,
+        "base_height_target": 0.75,
     }
     command_cfg = {
         "num_commands": 3,
@@ -170,7 +170,7 @@ def main():
         shutil.rmtree(log_dir)
     os.makedirs(log_dir, exist_ok=True)
 
-    env = HumanoidWalkEnv(
+    env = RunnerEnv(
         num_envs=args.num_envs, env_cfg=env_cfg, obs_cfg=obs_cfg, reward_cfg=reward_cfg, command_cfg=command_cfg
     )
 

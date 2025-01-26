@@ -2,7 +2,7 @@ import argparse
 import os
 import pickle
 
-from env import HumanoidWalkEnv
+from env import RunnerEnv
 from rsl_rl.runners import OnPolicyRunner
 
 import genesis as gs
@@ -23,7 +23,7 @@ def main():
     env_cfg, obs_cfg, reward_cfg, command_cfg, train_cfg = pickle.load(open(f"{log_dir}/cfgs.pkl", "rb"))
     reward_cfg["reward_scales"] = {}
 
-    env = HumanoidWalkEnv(
+    env = RunnerEnv(
         num_envs=1,
         env_cfg=env_cfg,
         obs_cfg=obs_cfg,

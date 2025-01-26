@@ -18,7 +18,7 @@ def run_sim(env, policy):
             obs, _, rews, dones, infos = env.step(actions)
 
 
-class HumanoidWalkEnv:
+class RunnerEnv:
     def __init__(self, num_envs, env_cfg, obs_cfg, reward_cfg, command_cfg, show_viewer=False, device="mps"):
         self.device = torch.device(device)
 
