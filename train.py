@@ -7,6 +7,7 @@ from env import RunnerEnv
 from rsl_rl.runners import OnPolicyRunner
 
 import genesis as gs
+from curriculum import get_reward_scales
 
 
 def get_train_cfg(exp_name, max_iterations):
@@ -106,6 +107,8 @@ def get_cfgs():
         "force_range": 80.0,
         # termination
         "termination_base_height": 0.4,
+        "termination_if_roll_greater_than": 60,  # degree
+        "termination_if_pitch_greater_than": 60,
         # base pose
         "base_init_pos": [0.0, 0.0, 0.75],
         "base_init_quat": [1.0, 0.0, 0.0, 0.0],
@@ -164,6 +167,7 @@ def main():
     log_dir = os.path.join(current_dir, f"logs/{args.exp_name}")
 
     env_cfg, obs_cfg, reward_cfg, command_cfg = get_cfgs()
+    reward_cfg["reward_scales"] = get_reward_scales()
     train_cfg = get_train_cfg(args.exp_name, args.max_iterations)
 
     if os.path.exists(log_dir):
