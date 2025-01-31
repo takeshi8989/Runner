@@ -18,7 +18,7 @@ def main():
     gs.init()
 
     current_dir = os.path.dirname(__file__)
-    log_dir = os.path.join(current_dir, f"logs/{args.exp_name}")
+    log_dir = os.path.join(current_dir, f"../logs/{args.exp_name}")
 
     env_cfg, obs_cfg, reward_cfg, command_cfg, train_cfg = pickle.load(open(f"{log_dir}/cfgs.pkl", "rb"))
     reward_cfg["reward_scales"] = {}
@@ -45,5 +45,5 @@ if __name__ == "__main__":
 
 """
 # evaluation
-python eval.py -e runner -v --ckpt 0
+python src/eval.py -e walk -v --ckpt 2000
 """

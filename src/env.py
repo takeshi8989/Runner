@@ -19,7 +19,7 @@ def run_sim(env, policy):
 
 
 class RunnerEnv:
-    def __init__(self, num_envs, env_cfg, obs_cfg, reward_cfg, command_cfg, show_viewer=False, device="mps"):
+    def __init__(self, num_envs, env_cfg, obs_cfg, reward_cfg, command_cfg, show_viewer=False, device="mps", model_path="../model/g1.xml"):
         self.device = torch.device(device)
 
         self.num_envs = num_envs
@@ -74,7 +74,7 @@ class RunnerEnv:
         self.inv_base_init_quat = inv_quat(self.base_init_quat)
 
         current_dir = os.path.dirname(__file__)
-        robot_path = os.path.join(current_dir, "model/g1.xml")
+        robot_path = os.path.join(current_dir, model_path)
         self.robot = self.scene.add_entity(
             gs.morphs.MJCF(file=robot_path)
         )

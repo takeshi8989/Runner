@@ -164,7 +164,7 @@ def main():
     gs.init(logging_level="warning")
 
     current_dir = os.path.dirname(__file__)
-    log_dir = os.path.join(current_dir, f"logs/{args.exp_name}")
+    log_dir = os.path.join(current_dir, f"../logs/{args.exp_name}")
 
     env_cfg, obs_cfg, reward_cfg, command_cfg = get_cfgs()
     reward_cfg["reward_scales"] = get_reward_scales()
