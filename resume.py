@@ -70,8 +70,8 @@ def main():
     train_cfg = get_train_cfg(args.exp_name, args.max_iterations, resume_path)
 
     reward_cfg["reward_scales"] = get_reward_scales(args.reward)
-    env_cfg["base_init_pos"] = [0.0, 0.0, 0.77]
-    reward_cfg["base_height_target"] = 0.77
+    env_cfg["base_init_pos"] = [0.0, 0.0, 0.8]
+    reward_cfg["base_height_target"] = 0.8
 
     updated_log_dir = os.path.join(current_dir, f"logs/{args.reward}")
     os.makedirs(updated_log_dir, exist_ok=True)

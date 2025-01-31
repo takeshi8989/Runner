@@ -110,7 +110,7 @@ def get_cfgs():
         "termination_if_roll_greater_than": 60,  # degree
         "termination_if_pitch_greater_than": 60,
         # base pose
-        "base_init_pos": [0.0, 0.0, 0.77],
+        "base_init_pos": [0.0, 0.0, 0.8],
         "base_init_quat": [1.0, 0.0, 0.0, 0.0],
         "episode_length_s": 20.0,
         "resampling_time_s": 4.0,
