@@ -30,3 +30,14 @@ Curriculum
 1. Standing
 2. Walking
 3. 
+
+## Terraform
+
+- Microsoft Azure
+- 
+
+## Scripts
+
+- Train (start training)
+- Pull (pull logs)
+- Stop (stop training)
