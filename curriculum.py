@@ -8,9 +8,19 @@ def get_standing_reward_scales():
     }
 
 
-def get_reward_scales(carriculum="standing"):
+def get_walk_reward_scales():
+    return {
+        "survival_time": 8.0,
+        "base_height": 5.0,
+        "stability": 3.0,
+        "energy_efficiency": 2.0,
+        "forward_velocity": 12.0,
+    }
+
+
+def get_reward_scales(carriculum="stand"):
     # Final reward function
-    walk = {
+    final = {
         "survival_time": 8.0,
         "base_height": 5.0,
         "stability": 3.0,
@@ -25,7 +35,10 @@ def get_reward_scales(carriculum="standing"):
         "crotch_control": 8.0,
     }
 
-    if carriculum == "standing":
+    if carriculum == "stand":
         return get_standing_reward_scales()
 
-    return walk
+    if carriculum == "walk":
+        return get_walk_reward_scales()
+
+    return final

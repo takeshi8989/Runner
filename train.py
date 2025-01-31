@@ -46,7 +46,7 @@ def get_train_cfg(exp_name, max_iterations):
             "resume": False,
             "resume_path": None,
             "run_name": "",
-            "save_interval": 100,
+            "save_interval": 500,
         },
         "runner_class_name": "OnPolicyRunner",
         "seed": 1,
@@ -110,7 +110,7 @@ def get_cfgs():
         "termination_if_roll_greater_than": 60,  # degree
         "termination_if_pitch_greater_than": 60,
         # base pose
-        "base_init_pos": [0.0, 0.0, 0.75],
+        "base_init_pos": [0.0, 0.0, 0.77],
         "base_init_quat": [1.0, 0.0, 0.0, 0.0],
         "episode_length_s": 20.0,
         "resampling_time_s": 4.0,
@@ -142,7 +142,7 @@ def get_cfgs():
             "torso_upright": 0.1,
             "crotch_control": 8.0,
         },
-        "base_height_target": 0.75,
+        "base_height_target": 0.77,
     }
     command_cfg = {
         "num_commands": 3,
@@ -193,5 +193,5 @@ if __name__ == "__main__":
 
 """
 # training
-python train.py
+python train.py --max_iterations 10000
 """
