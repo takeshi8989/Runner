@@ -1,2 +1,4 @@
 **/__pycache__/*
-logs/*/
+.aws/*
+terraform.tfvars
+.DS_Store

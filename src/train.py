@@ -167,7 +167,7 @@ def main():
     log_dir = os.path.join(current_dir, f"../logs/{args.exp_name}")
 
     env_cfg, obs_cfg, reward_cfg, command_cfg = get_cfgs()
-    reward_cfg["reward_scales"] = get_reward_scales()
+    reward_cfg["reward_scales"] = get_reward_scales("walk")
     train_cfg = get_train_cfg(args.exp_name, args.max_iterations)
 
     if os.path.exists(log_dir):
@@ -193,5 +193,5 @@ if __name__ == "__main__":
 
 """
 # training
-python train.py --max_iterations 10000
+python src/train.py -e walk --max_iterations 20000
 """
