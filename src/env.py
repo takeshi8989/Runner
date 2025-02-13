@@ -373,3 +373,14 @@ class RunnerEnv:
         left_arm = self.actions[:, self.env_cfg["dof_names"].index("left_shoulder_pitch_joint")]
         right_arm = self.actions[:, self.env_cfg["dof_names"].index("right_shoulder_pitch_joint")]
         return -torch.abs(left_arm + right_arm)  # Penalize asymmetrical arm swings
+
+    def _reward_hip_pitch(self):
+        threshold = 0.5
+
+        left_hip_roll = self.dof_pos[:, self.env_cfg["dof_names"].index("left_hip_pitch_joint")]
+        right_hip_roll = self.dof_pos[:, self.env_cfg["dof_names"].index("right_hip_pitch_joint")]
+
+        penalty = torch.square(torch.clamp(left_hip_roll - threshold, min=0.0)) + torch.square(
+            torch.clamp(right_hip_roll - threshold, min=0.0)
+        )
+        return -penalty
