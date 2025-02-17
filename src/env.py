@@ -384,3 +384,24 @@ class RunnerEnv:
             torch.clamp(right_hip_roll - threshold, min=0.0)
         )
         return -penalty
+
+    def _reward_straight_waist(self):
+        # Penalize deviations from the target velocity (reduce jerky forward movement)
+        waist_yaw = self.dof_pos[:, self.env_cfg["dof_names"].index("waist_yaw_joint")]
+        waist_roll = self.dof_pos[:, self.env_cfg["dof_names"].index("waist_roll_joint")]
+        waist_pitch = self.dof_pos[:, self.env_cfg["dof_names"].index("waist_pitch_joint")]
+
+        penalty = torch.square(waist_yaw) + torch.square(waist_roll) + torch.square(waist_pitch)
+        return -penalty
+
+    def _reward_high_knees(self):
+        # If the knees are higher than the hips, reward the agent
+        left_knee_height = self.robot.get_link("left_knee_link").get_pos()[:, 2]
+        right_knee_height = self.robot.get_link("right_knee_link").get_pos()[:, 2]
+        left_hip_height = self.robot.get_link("left_hip_link").get_pos()[:, 2]
+        right_hip_height = self.robot.get_link("right_hip_link").get_pos()[:, 2]
+
+        left_knee_above_hip = (left_knee_height > left_hip_height).float()
+        right_knee_above_hip = (right_knee_height > right_hip_height).float()
+
+        return left_knee_above_hip + right_knee_above_hip

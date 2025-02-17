@@ -19,7 +19,6 @@ fonttools==4.55.6
 freetype-py==2.5.1
 fsspec==2024.12.0
 genesis-world==0.2.1
-glfw==2.8.0
 gmpy2 @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/croot-muov7gw1/gmpy2_1645462616268/work
 grpcio==1.70.0
 idna==3.10
@@ -59,7 +58,6 @@ psutil==6.1.1
 pycollada==0.8
 pydantic==2.7.1
 pydantic_core==2.18.2
-PyGEL3D==0.5.2
 pyglet==2.1.2
 pygltflib==1.16.0
 Pygments==2.19.1

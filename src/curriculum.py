@@ -15,7 +15,9 @@ def get_walk_reward_scales():
         "stability": 3.0,
         "energy_efficiency": 2.0,
         "forward_velocity": 12.0,
-        "hip_pitch": 2.0
+        "crotch_control": 2.0,
+        "hip_pitch": 2.0,
+        "straight_waist": 2.0,
     }
 
 
