@@ -357,16 +357,19 @@ class RunnerEnv:
         torso_pitch_roll = torch.square(self.base_euler[:, :2])  # [pitch, roll]
         return -torch.sum(torso_pitch_roll, dim=1)
 
-    def _reward_crotch_control(self):
+    def _reward_straight_hip(self):
         # Get the positions (angles) of the left and right hip roll joints
         left_hip_roll_angle = self.dof_pos[:, self.env_cfg["dof_names"].index("left_hip_roll_joint")]
         right_hip_roll_angle = self.dof_pos[:, self.env_cfg["dof_names"].index("right_hip_roll_joint")]
 
-        # Square the deviations to penalize large angles more
+        left_hip_yaw_angle = self.dof_pos[:, self.env_cfg["dof_names"].index("left_hip_yaw_joint")]
+        right_hip_yaw_angle = self.dof_pos[:, self.env_cfg["dof_names"].index("right_hip_yaw_joint")]
+
         hip_roll_deviation = torch.square(left_hip_roll_angle) + torch.square(right_hip_roll_angle)
+        hip_yaw_deviation = torch.square(left_hip_yaw_angle) + torch.square(right_hip_yaw_angle)
 
         # Return a negative reward proportional to the total deviation
-        return -hip_roll_deviation
+        return -(hip_roll_deviation + hip_yaw_deviation)
 
     def _reward_arm_swing(self):
         # Reward symmetrical arm swings
@@ -377,11 +380,11 @@ class RunnerEnv:
     def _reward_hip_pitch(self):
         threshold = 0.5
 
-        left_hip_roll = self.dof_pos[:, self.env_cfg["dof_names"].index("left_hip_pitch_joint")]
-        right_hip_roll = self.dof_pos[:, self.env_cfg["dof_names"].index("right_hip_pitch_joint")]
+        left_hip_pitch = self.dof_pos[:, self.env_cfg["dof_names"].index("left_hip_pitch_joint")]
+        right_hip_pitch = self.dof_pos[:, self.env_cfg["dof_names"].index("right_hip_pitch_joint")]
 
-        penalty = torch.square(torch.clamp(left_hip_roll - threshold, min=0.0)) + torch.square(
-            torch.clamp(right_hip_roll - threshold, min=0.0)
+        penalty = torch.square(torch.clamp(left_hip_pitch - threshold, min=0.0)) + torch.square(
+            torch.clamp(right_hip_pitch - threshold, min=0.0)
         )
         return -penalty
 

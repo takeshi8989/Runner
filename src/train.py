@@ -7,7 +7,6 @@ from env import RunnerEnv
 from rsl_rl.runners import OnPolicyRunner
 
 import genesis as gs
-from curriculum import get_reward_scales
 
 
 def get_train_cfg(exp_name, max_iterations):
@@ -129,18 +128,14 @@ def get_cfgs():
     }
     reward_cfg = {
         "reward_scales": {
-            "survival_time": 8.0,
-            "base_height": 5.0,  # Encourage maintaining height
-            "stability": 3.0,  # Strongly discourage angular velocity
-            "energy_efficiency": 2.0,  # Penalize excessive energy usage
-            "forward_velocity": 12.0,   # Encourage forward movement
-            "tracking_lin_vel": 8.0,  # Encourage tracking linear velocity
-            "foot_contact": 0.00001,  # Penalize foot contact
-            "smooth_motion": 0.1,  # Negative weight to discourage rapid changes
-            "straight_walking": 10.0,  # Encourage walking in a straight line
-            "large_strides": 10.0,
-            "torso_upright": 0.1,
-            "crotch_control": 8.0,
+            "survival_time": 5.0,
+            "base_height": 5.0,
+            "stability": 3.0,
+            "energy_efficiency": 0.5,
+            "forward_velocity": 8.0,
+            "straight_hip": 24.0,
+            "hip_pitch": 12.0,
+            "straight_waist": 12.0,
         },
         "base_height_target": 0.77,
     }
@@ -167,7 +162,6 @@ def main():
     log_dir = os.path.join(current_dir, f"../logs/{args.exp_name}")
 
     env_cfg, obs_cfg, reward_cfg, command_cfg = get_cfgs()
-    reward_cfg["reward_scales"] = get_reward_scales("walk")
     train_cfg = get_train_cfg(args.exp_name, args.max_iterations)
 
     if os.path.exists(log_dir):
