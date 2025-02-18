@@ -10,14 +10,14 @@ def get_standing_reward_scales():
 
 def get_walk_reward_scales():
     return {
-        "survival_time": 8.0,
+        "survival_time": 5.0,
         "base_height": 5.0,
         "stability": 3.0,
-        "energy_efficiency": 2.0,
-        "forward_velocity": 12.0,
-        "crotch_control": 2.0,
-        "hip_pitch": 2.0,
-        "straight_waist": 2.0,
+        "energy_efficiency": 0.5,
+        "forward_velocity": 8.0,
+        "crotch_control": 24.0,
+        "hip_pitch": 12.0,
+        "straight_waist": 12.0,
     }
 
 
