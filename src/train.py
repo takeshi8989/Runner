@@ -187,5 +187,5 @@ if __name__ == "__main__":
 
 """
 # training
-python src/train.py -e walk --max_iterations 20000
+python src/train.py -e runner --max_iterations 20000
 """
