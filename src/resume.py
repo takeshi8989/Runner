@@ -37,11 +37,11 @@ def get_train_cfg(exp_name, max_iterations, resume_path=None):
             "load_run": -1,
             "log_interval": 1,
             "max_iterations": max_iterations,
-            "num_steps_per_env": 32,
+            "num_steps_per_env": 64,
             "policy_class_name": "ActorCritic",
             "record_interval": -1,
             "resume": True,
-            "resume_path": resume_path,  # Path to the checkpoint to resume training
+            "resume_path": resume_path,
             "run_name": "",
             "save_interval": 500,
         },
@@ -54,7 +54,6 @@ def get_train_cfg(exp_name, max_iterations, resume_path=None):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-e", "--exp_name", type=str, default="runner")
-    parser.add_argument("-r", "--reward", type=str, default="walk")
     parser.add_argument("--resume_ckpt", type=int, default=100, help="Checkpoint to resume from")
     parser.add_argument("--max_iterations", type=int, default=1000, help="Number of additional training iterations")
     args = parser.parse_args()
@@ -68,7 +67,7 @@ def main():
     env_cfg, obs_cfg, reward_cfg, command_cfg, train_cfg = pickle.load(open(f"{log_dir}/cfgs.pkl", "rb"))
     train_cfg = get_train_cfg(args.exp_name, args.max_iterations, resume_path)
 
-    updated_log_dir = os.path.join(current_dir, f"logs/{args.reward}")
+    updated_log_dir = os.path.join(current_dir, f"../logs/resume_{args.exp_name}")
     os.makedirs(updated_log_dir, exist_ok=True)
     pickle.dump(
         [env_cfg, obs_cfg, reward_cfg, command_cfg, train_cfg],
@@ -95,5 +94,5 @@ if __name__ == "__main__":
 
 """
 # Resume training with updated reward functions
-python resume.py -e stander -r walk --resume_ckpt 2000 --max_iterations 10000
+python src/resume.py -e runner --resume_ckpt 4500 --max_iterations 10000
 """
