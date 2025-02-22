@@ -22,6 +22,7 @@ def main():
 
     env_cfg, obs_cfg, reward_cfg, command_cfg, train_cfg = pickle.load(open(f"{log_dir}/cfgs.pkl", "rb"))
     reward_cfg["reward_scales"] = {}
+    env_cfg["episode_length_s"] = 5.0
 
     env = RunnerEnv(
         num_envs=1,
