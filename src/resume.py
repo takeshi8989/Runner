@@ -94,5 +94,5 @@ if __name__ == "__main__":
 
 """
 # Resume training with updated reward functions
-python src/resume.py -e runner --resume_ckpt 4500 --max_iterations 10000
+python src/resume.py -e your_runner --resume_ckpt 4500 --max_iterations 10000
 """

@@ -46,5 +46,5 @@ if __name__ == "__main__":
 
 """
 # evaluation
-python src/eval.py -e walk -v --ckpt 2000
+python src/eval.py -e runner -v --ckpt 20000
 """
