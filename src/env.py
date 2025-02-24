@@ -45,9 +45,9 @@ class RunnerEnv:
             sim_options=gs.options.SimOptions(dt=self.dt, substeps=2),
             viewer_options=gs.options.ViewerOptions(
                 res=(1280, 960),
-                max_FPS=int(0.5 / self.dt),
-                camera_pos=(-3.0, 0.0, 2.0),
-                camera_lookat=(2.0, -1.5, 1.0),
+                max_FPS=int(0.05 / self.dt),
+                camera_pos=(6, 3, 5),
+                camera_lookat=(-2.0, 3.0, 0.8),
                 camera_fov=60,
             ),
             vis_options=gs.options.VisOptions(
@@ -149,6 +149,13 @@ class RunnerEnv:
         target_dof_pos = exec_actions * self.env_cfg["action_scale"] + self.default_dof_pos
         self.robot.control_dofs_position(target_dof_pos, self.motor_dofs)
         self.scene.step()
+
+        cam_pose = self.scene.viewer.camera_pose
+        # move camera with the robot
+        cam_pose[:3, 3] = self.base_pos[0].cpu().numpy() + np.array([6, 3, 5])
+        # look at the robot base
+        # cam_pose[:3, :3] = np.array([[0, 0, 1], [0, 1, 0], [-1, 0, 0]])
+        self.scene.viewer.set_camera_pose(cam_pose)
 
         # update buffers
         self.episode_length_buf += 1
