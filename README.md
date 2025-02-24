@@ -1,4 +1,6 @@
-# humanoid walk
+# Runner
+
+![Runner_video_1-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/fe6cf06d-c815-4304-9d53-171005711324)
 
 ## Overview
 
@@ -41,3 +43,5 @@ Curriculum
 - Train (start training)
 - Pull (pull logs)
 - Stop (stop training)
+
+
