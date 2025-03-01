@@ -20,9 +20,10 @@ def main():
     current_dir = os.path.dirname(__file__)
     log_dir = os.path.join(current_dir, f"../logs/{args.exp_name}")
 
-    env_cfg, obs_cfg, reward_cfg, command_cfg, train_cfg = pickle.load(open(f"{log_dir}/cfgs.pkl", "rb"))
+    # env_cfg, obs_cfg, reward_cfg, command_cfg, train_cfg = pickle.load(open(f"{log_dir}/cfgs.pkl", "rb"))
+    env_cfg, obs_cfg, reward_cfg, command_cfg, train_cfg = pickle.load(open(f"{current_dir}/../logs/runner/cfgs.pkl", "rb"))
     reward_cfg["reward_scales"] = {}
-    env_cfg["episode_length_s"] = 5.0
+    env_cfg["episode_length_s"] = 10.0
 
     env = RunnerEnv(
         num_envs=1,
@@ -46,5 +47,5 @@ if __name__ == "__main__":
 
 """
 # evaluation
-python src/eval.py -e runner -v --ckpt 20000
+python src/eval.py -e progress -v --ckpt 19000
 """

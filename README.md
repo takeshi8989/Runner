@@ -1,6 +1,6 @@
 # Runner: Reinforcement Learning for Humanoid Running without Motion Capture
 
-![Runner_video_1-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/fe6cf06d-c815-4304-9d53-171005711324)
+![Runner_video](./videos/result.gif)
 
 ## Abstract
 

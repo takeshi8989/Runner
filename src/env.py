@@ -45,7 +45,7 @@ class RunnerEnv:
             sim_options=gs.options.SimOptions(dt=self.dt, substeps=2),
             viewer_options=gs.options.ViewerOptions(
                 res=(1280, 960),
-                max_FPS=int(0.05 / self.dt),
+                max_FPS=int(0.5 / self.dt),
                 camera_pos=(6, 3, 5),
                 camera_lookat=(-2.0, 3.0, 0.8),
                 camera_fov=60,
